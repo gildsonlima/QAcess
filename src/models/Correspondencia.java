@@ -4,10 +4,17 @@
  */
 package models;
 
+import java.util.Date;
+
 /**
  *
  * @author GCL
  */
 public class Correspondencia {
+    
+   
+    
+    
+    
     
 }
