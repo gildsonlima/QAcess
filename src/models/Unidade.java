@@ -20,41 +20,44 @@ public class Unidade {
         return cep;
     }
 
-    public void setCep(String cep) {
+    public boolean setCep(String cep) {
         this.cep = cep;
+        return true;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public boolean setId(int id) {
         this.id = id;
+        return true;
     }
 
     public String getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public boolean setNumero(String numero) {
         this.numero = numero;
+        return true;
     }
 
     public String getBloco() {
         return bloco;
     }
 
-    public void setBloco(String bloco) {
+    public boolean setBloco(String bloco) {
         this.bloco = bloco;
+        return true;
     }
 
     public String getCondominio() {
         return condominio;
     }
 
-    public void setCondominio(String condominio) {
+    public boolean setCondominio(String condominio) {
         this.condominio = condominio;
+        return true;
     }
-    
-    
 }

@@ -11,71 +11,104 @@ import java.util.Date;
  * @author GCL
  */
 public class Correspondencia {
-    
+      
    private int id;
    private Date dataEntrega;
    private Date dataRetirada;
    private String status;
-   private Condomino remetente;
+   private String remetente;
+   private Condomino condominoRetirada;
    private Unidade endereco;
-   private Funcionario funcionarioRecepcao;
+   private Funcionario funcionarioEntrega;
+   private Funcionario funcionarioRetirada;
+   
+    public Correspondencia(){
+        this.status = "Pendente";
+    }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public boolean setId(int id) {
         this.id = id;
+        return true;
     }
 
     public Date getDataEntrega() {
         return dataEntrega;
     }
 
-    public void setDataEntrega(Date dataEntrega) {
+    public boolean setDataEntrega(Date dataEntrega) {
         this.dataEntrega = dataEntrega;
+        return true;
     }
 
     public Date getDataRetirada() {
         return dataRetirada;
     }
 
-    public void setDataRetirada(Date dataRetirada) {
+    public boolean setDataRetirada(Date dataRetirada) {
         this.dataRetirada = dataRetirada;
+        return true;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public boolean setStatus(String status) {
+        if(status.equalsIgnoreCase("Entregue")){
+            this.status = status;
+            Date date = new Date();
+            this.setDataRetirada(date);
+        }else{
+            this.status = status;
+        }
+        
+        return true;
     }
 
-    public Condomino getRemetente() {
+    public String getRemetente() {
         return remetente;
     }
 
-    public void setRemetente(Condomino remetente) {
+    public boolean setRemetente(String remetente) {
         this.remetente = remetente;
+        return true;
     }
 
     public Unidade getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Unidade endereco) {
+    public boolean setEndereco(Unidade endereco) {
         this.endereco = endereco;
+        return true;
     }
 
-    public Funcionario getFuncionarioRecepcao() {
-        return funcionarioRecepcao;
+    public Funcionario getFuncionarioEntrega() {
+        return funcionarioEntrega;
     }
 
-    public void setFuncionarioRecepcao(Funcionario funcionarioRecepcao) {
-        this.funcionarioRecepcao = funcionarioRecepcao;
+    public void setFuncionarioEntrega(Funcionario funcionarioEntrega) {
+        this.funcionarioEntrega = funcionarioEntrega;
     }
-   
-   
-    
+
+    public Funcionario getFuncionarioRetirada() {
+        return funcionarioRetirada;
+    }
+
+    public void setFuncionarioRetirada(Funcionario funcionarioRetirada) {
+        this.funcionarioRetirada = funcionarioRetirada;
+    }
+
+    public Condomino getCondominoRetirada() {
+        return condominoRetirada;
+    }
+
+    public void setCondominoRetirada(Condomino condominoRetirada) {
+        this.condominoRetirada = condominoRetirada;
+    }
+
 }
