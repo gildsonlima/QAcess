@@ -18,6 +18,33 @@ public abstract class Usuario {
     protected String estadoCivil;
     protected String contato;
     protected String cpf;
+    protected String email;
+    protected String usuarioAcesso;
+    protected String senha;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUsuarioAcesso() {
+        return usuarioAcesso;
+    }
+
+    public void setUsuarioAcesso(String usuarioAcesso) {
+        this.usuarioAcesso = usuarioAcesso;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public int getId() {
         return id;
@@ -65,7 +92,5 @@ public abstract class Usuario {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-    
-    
+    }   
 }

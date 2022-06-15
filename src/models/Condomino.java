@@ -8,7 +8,7 @@ package models;
  *
  * @author GCL
  */
-public class Condomino {
+public class Condomino extends Usuario{
     
     private Unidade unidade;
 
@@ -19,6 +19,5 @@ public class Condomino {
     public void setUnidade(Unidade unidade) {
         this.unidade = unidade;
     }
-    
-    
+     
 }

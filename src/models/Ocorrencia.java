@@ -13,10 +13,11 @@ import java.util.Date;
 public class Ocorrencia {
     
     private int id;
-    private String condomino;
+    private Condomino condomino;
     private Date data;
     private String local;
     private String status;
+    private String descricao;
 
     public int getId() {
         return id;
@@ -26,12 +27,20 @@ public class Ocorrencia {
         this.id = id;
     }
 
-    public String getCondomino() {
+    public Condomino getCondomino() {
         return condomino;
     }
 
-    public void setCondomino(String condomino) {
+    public void setCondomino(Condomino condomino) {
         this.condomino = condomino;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public Date getData() {
