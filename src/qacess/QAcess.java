@@ -4,6 +4,8 @@
  */
 package qacess;
 
+import views.ViewOcorrencia;
+
 /**
  *
  * @author GCL
@@ -15,6 +17,10 @@ public class QAcess {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ViewOcorrencia viewOcorrencia = new ViewOcorrencia();
+        viewOcorrencia.setVisible(true);
+        
+        
     }
     
 }
