@@ -5,6 +5,8 @@
 package qacess;
 
 import views.ViewOcorrencia;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  *
@@ -19,8 +21,9 @@ public class QAcess {
         // TODO code application logic here
         ViewOcorrencia viewOcorrencia = new ViewOcorrencia();
         viewOcorrencia.setVisible(true);
-        
-        
+        System.out.println(LocalDateTime.now());
+        Date data = new Date();
+        System.out.println("Data Agora: " + data);
     }
     
 }

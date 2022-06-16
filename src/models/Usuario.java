@@ -22,75 +22,88 @@ public abstract class Usuario {
     protected String usuarioAcesso;
     protected String senha;
 
+    public boolean validarCPF(){
+        return true;
+    }
+    
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public boolean setEmail(String email) {
         this.email = email;
+        return true;
     }
 
     public String getUsuarioAcesso() {
         return usuarioAcesso;
     }
 
-    public void setUsuarioAcesso(String usuarioAcesso) {
+    public boolean setUsuarioAcesso(String usuarioAcesso) {
         this.usuarioAcesso = usuarioAcesso;
+        return true;
     }
 
     public String getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public boolean setSenha(String senha) {
         this.senha = senha;
+        return true;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public boolean setId(int id) {
         this.id = id;
+        return true;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public boolean setNome(String nome) {
         this.nome = nome;
+        return true;
     }
 
     public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public boolean setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
+        return true;
     }
 
     public String getEstadoCivil() {
         return estadoCivil;
     }
 
-    public void setEstadoCivil(String estadoCivil) {
+    public boolean setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
+        return true;
     }
 
     public String getContato() {
         return contato;
     }
 
-    public void setContato(String contato) {
+    public boolean setContato(String contato) {
         this.contato = contato;
+        return true;
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public boolean setCpf(String cpf) {
         this.cpf = cpf;
+        return true;
     }   
 }

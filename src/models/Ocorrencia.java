@@ -23,50 +23,54 @@ public class Ocorrencia {
         return id;
     }
 
-    public void setId(int id) {
+    public boolean setId(int id) {
         this.id = id;
+        return true;
     }
 
     public Condomino getCondomino() {
         return condomino;
     }
 
-    public void setCondomino(Condomino condomino) {
+    public boolean setCondomino(Condomino condomino) {
         this.condomino = condomino;
+        return true;
     }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public boolean setDescricao(String descricao) {
         this.descricao = descricao;
+        return true;
     }
 
     public Date getData() {
         return data;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public boolean setData() {
+        Date date = new Date();
+        this.data = date;
+        return true;
     }
 
     public String getLocal() {
         return local;
     }
 
-    public void setLocal(String local) {
+    public boolean setLocal(String local) {
         this.local = local;
+        return true;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public boolean setStatus(String status) {
         this.status = status;
-    }
-    
-    
-    
+        return true;
+    }   
 }

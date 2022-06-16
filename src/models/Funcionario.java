@@ -8,7 +8,7 @@ package models;
  *
  * @author GCL
  */
-public class Funcionario {
+public class Funcionario extends Usuario{
     
     private String cargo;
 
@@ -16,7 +16,8 @@ public class Funcionario {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public boolean setCargo(String cargo) {
         this.cargo = cargo;
+        return true;
     }
 }
