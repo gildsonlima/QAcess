@@ -4,9 +4,8 @@
  */
 package qacess;
 
-import views.ViewOcorrencia;
-import java.time.LocalDateTime;
-import java.util.Date;
+import models.Funcionario;
+import repositors.QAcessDB;
 
 /**
  *
@@ -19,11 +18,14 @@ public class QAcess {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ViewOcorrencia viewOcorrencia = new ViewOcorrencia();
-        viewOcorrencia.setVisible(true);
-        System.out.println(LocalDateTime.now());
-        Date data = new Date();
-        System.out.println("Data Agora: " + data);
-    }
-    
+        //ViewOcorrencia viewOcorrencia = new ViewOcorrencia();
+        //viewOcorrencia.setVisible(true);
+        
+        QAcessDB cdb = new QAcessDB();
+        if(cdb.connect()){
+            System.out.println("Conexão OK com o banco de dados");
+        }else{
+            System.out.println("Deu ruim com a conexão! :'(");
+        }
+    }   
 }
