@@ -13,11 +13,11 @@ import repositors.OcorrenciaDB;
  *
  * @author GCL
  */
-public class ocorrenciaController implements ActionListener{
+public class OcorrenciaController implements ActionListener{
     private Statement statement;
     private OcorrenciaDB ocorrenciaDB;
     
-    public ocorrenciaController(Statement statement, OcorrenciaDB ocorrenciaDB){
+    public OcorrenciaController(Statement statement, OcorrenciaDB ocorrenciaDB){
         this.statement = statement;
         this.ocorrenciaDB = ocorrenciaDB;
     }
