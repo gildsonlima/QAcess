@@ -16,11 +16,12 @@ public class OcorrenciaDB {
     
     protected ResultSet resultSet;
     
-    public boolean insertOcorrencia(Statement statement, Ocorrencia ocorrencia){
+    public boolean insertUsuario(Statement statement, Ocorrencia ocorrencia){
         try{
             String sql = "insert into ocorrencia "
-                    + "(id, local, status, descricao, data) "
+                    + "(id, idCondomino, local, status, descricao, data) "
                     + "values ('" + ocorrencia.getId()+ "', "
+                    + "'" + ocorrencia.getCondomino().getId() + "', "
                     + "'" + ocorrencia.getLocal()+ "', "
                     + "'" + ocorrencia.getStatus() + "', "
                     + "'" + ocorrencia.getDescricao() + "', "

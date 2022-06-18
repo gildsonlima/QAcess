@@ -19,11 +19,13 @@ public class CorrespondenciaDB {
     public boolean insertCorrespondencia(Statement statement, Correspondencia correspondencia){
         try{
             String sql = "insert into correspondencia "
-                    + "(id, remetente, dataEntrega, status) "
+                    + "(id, remetente, idEndereco, status, funcionarioRecepcao, dataRecepcao) "
                     + "values ('" + correspondencia.getId() + "', "
-                    + "'" + correspondencia.getRemetente()+ "', "
-                    + "'" + correspondencia.getDataRecepcionadaPeloCondominio()+ "', "
-                    + "'" + correspondencia.getStatus() + "');";
+                    + "'" + correspondencia.getRemetente() + "', "
+                    + "'" + correspondencia.getEndereco().getId() + "', "
+                    + "'" + correspondencia.getStatus() + "', "
+                    + "'" + correspondencia.getFuncionárioResponsavelPelaRecepcao().getId() + "', "
+                    + "'" + correspondencia.getDataRecepcionadaPeloCondominio() + "');";
             
             statement.execute(sql);
             return true;

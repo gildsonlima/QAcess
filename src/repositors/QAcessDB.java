@@ -37,7 +37,7 @@ public class QAcessDB {
             this.connection = (Connection)DriverManager.getConnection(server, user, pwd);
             this.statement = (Statement)this.connection.createStatement();
         }catch(Exception e){
-            System.out.println("Erro ao conectar ao banco: "+e);
+            System.out.println("Erro ao conectar ao banco: " + e);
         }
         
         if(this.connection !=  null){
