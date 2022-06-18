@@ -4,7 +4,6 @@
  */
 package qacess;
 
-import models.Funcionario;
 import repositors.QAcessDB;
 
 /**
@@ -24,6 +23,6 @@ public class QAcess {
             System.out.println("Conexão OK com o banco de dados.");
         }else{
             System.out.println("Deu ruim com a conexão!");
-        }
+        }  
     }   
 }
