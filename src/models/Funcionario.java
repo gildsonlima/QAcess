@@ -4,6 +4,8 @@
  */
 package models;
 
+import java.util.UUID;
+
 /**
  *
  * @author GCL
@@ -11,6 +13,10 @@ package models;
 public class Funcionario extends Usuario{
     
     private String cargo;
+    
+    public Funcionario(){
+        this.id = UUID.randomUUID();
+    }
 
     public String getCargo() {
         return cargo;

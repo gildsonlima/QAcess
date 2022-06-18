@@ -5,6 +5,7 @@
 package models;
 
 import java.util.Date;
+import java.util.UUID;
 
 /**
  *
@@ -12,63 +13,25 @@ import java.util.Date;
  */
 public class Correspondencia {
       
-   private int id;
-   private Date dataEntrega;
-   private Date dataRetirada;
-   private String status;
+   private UUID id;
    private String remetente;
-   private Condomino condominoRetirada;
    private Unidade endereco;
-   private Funcionario funcionarioEntrega;
-   private Funcionario funcionarioRetirada;
+   private String status;
+   private Funcionario funcionárioResponsavelPelaRecepcao;
+   private Date dataRecepcionadaPeloCondominio;
+   private Condomino condominoResponsavelPelaRetirada;
+   private Funcionario funcionarioResponsavelPelaEntrega;
+   private Date dataRecepcionadaPeloCondomino;
    
     public Correspondencia(){
         this.status = "Pendente";
+        this.id = UUID.randomUUID();
     }
-
-    public int getId() {
+    
+    public UUID getId() {
         return id;
     }
-
-    public boolean setId(int id) {
-        this.id = id;
-        return true;
-    }
-
-    public Date getDataEntrega() {
-        return dataEntrega;
-    }
-
-    public boolean setDataEntrega(Date dataEntrega) {
-        this.dataEntrega = dataEntrega;
-        return true;
-    }
-
-    public Date getDataRetirada() {
-        return dataRetirada;
-    }
-
-    public boolean setDataRetirada(Date dataRetirada) {
-        this.dataRetirada = dataRetirada;
-        return true;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public boolean setStatus(String status) {
-        if(status.equalsIgnoreCase("Entregue")){
-            this.status = status;
-            Date date = new Date();
-            this.setDataRetirada(date);
-        }else{
-            this.status = status;
-        }
-        
-        return true;
-    }
-
+    
     public String getRemetente() {
         return remetente;
     }
@@ -77,7 +40,7 @@ public class Correspondencia {
         this.remetente = remetente;
         return true;
     }
-
+    
     public Unidade getEndereco() {
         return endereco;
     }
@@ -86,29 +49,59 @@ public class Correspondencia {
         this.endereco = endereco;
         return true;
     }
-
-    public Funcionario getFuncionarioEntrega() {
-        return funcionarioEntrega;
+    
+    public String getStatus() {
+        return status;
     }
 
-    public void setFuncionarioEntrega(Funcionario funcionarioEntrega) {
-        this.funcionarioEntrega = funcionarioEntrega;
+    public boolean setStatus(String status) {
+        if(status.equalsIgnoreCase("Entregue")){
+            this.status = status;
+            Date date = new Date();
+            this.setDataRecepcionadaPeloCondomino(date);
+        }else{
+            this.status = status;
+        }
+        return true;
     }
 
-    public Funcionario getFuncionarioRetirada() {
-        return funcionarioRetirada;
+    public Funcionario getFuncionárioResponsavelPelaRecepcao() {
+        return funcionárioResponsavelPelaRecepcao;
     }
 
-    public void setFuncionarioRetirada(Funcionario funcionarioRetirada) {
-        this.funcionarioRetirada = funcionarioRetirada;
+    public void setFuncionárioResponsavelPelaRecepcao(Funcionario funcionárioResponsavelPelaRecepcao) {
+        this.funcionárioResponsavelPelaRecepcao = funcionárioResponsavelPelaRecepcao;
     }
 
-    public Condomino getCondominoRetirada() {
-        return condominoRetirada;
+    public Date getDataRecepcionadaPeloCondominio() {
+        return dataRecepcionadaPeloCondominio;
     }
 
-    public void setCondominoRetirada(Condomino condominoRetirada) {
-        this.condominoRetirada = condominoRetirada;
+    public void setDataRecepcionadaPeloCondominio(Date dataRecepcionadaPeloCondominio) {
+        this.dataRecepcionadaPeloCondominio = dataRecepcionadaPeloCondominio;
     }
 
+    public Condomino getCondominoResponsavelPelaRetirada() {
+        return condominoResponsavelPelaRetirada;
+    }
+
+    public void setCondominoResponsavelPelaRetirada(Condomino condominoResponsavelPelaRetirada) {
+        this.condominoResponsavelPelaRetirada = condominoResponsavelPelaRetirada;
+    }
+
+    public Funcionario getFuncionarioResponsavelPelaEntrega() {
+        return funcionarioResponsavelPelaEntrega;
+    }
+
+    public void setFuncionarioResponsavelPelaEntrega(Funcionario funcionarioResponsavelPelaEntrega) {
+        this.funcionarioResponsavelPelaEntrega = funcionarioResponsavelPelaEntrega;
+    }
+
+    public Date getDataRecepcionadaPeloCondomino() {
+        return dataRecepcionadaPeloCondomino;
+    }
+
+    public void setDataRecepcionadaPeloCondomino(Date dataRecepcionadaPeloCondomino) {
+        this.dataRecepcionadaPeloCondomino = dataRecepcionadaPeloCondomino;
+    }
 }

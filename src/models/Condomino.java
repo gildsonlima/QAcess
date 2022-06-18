@@ -4,6 +4,8 @@
  */
 package models;
 
+import java.util.UUID;
+
 /**
  *
  * @author GCL
@@ -11,6 +13,10 @@ package models;
 public class Condomino extends Usuario{
     
     private Unidade unidade;
+    
+    public Condomino(){
+        this.id = UUID.randomUUID();
+    }
 
     public Unidade getUnidade() {
         return unidade;

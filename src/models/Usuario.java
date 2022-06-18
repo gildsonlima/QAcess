@@ -5,6 +5,7 @@
 package models;
 
 import java.util.Date;
+import java.util.UUID;
 
 /**
  *
@@ -12,17 +13,48 @@ import java.util.Date;
  */
 public abstract class Usuario {
     
-    protected int id;
+    protected UUID id;
     protected String nome;
-    protected Date dataNascimento;
-    protected String estadoCivil;
-    protected String contato;
     protected String cpf;
+    protected Date dataNascimento;
     protected String email;
+    protected String contato;
+    protected String estadoCivil;
     protected String usuarioAcesso;
     protected String senha;
+    
+    private boolean validarCPF(){
+        return true;
+    }
+    
+    public UUID getId() {
+        return id;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
 
-    public boolean validarCPF(){
+    public boolean setNome(String nome) {
+        this.nome = nome;
+        return true;
+    }
+    
+    public String getCpf() {
+        return cpf;
+    }
+
+    public boolean setCpf(String cpf) {
+        this.cpf = cpf;
+        return true;
+    } 
+    
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public boolean setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
         return true;
     }
     
@@ -34,7 +66,25 @@ public abstract class Usuario {
         this.email = email;
         return true;
     }
+    
+    public String getContato() {
+        return contato;
+    }
 
+    public boolean setContato(String contato) {
+        this.contato = contato;
+        return true;
+    }
+    
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public boolean setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+        return true;
+    }
+    
     public String getUsuarioAcesso() {
         return usuarioAcesso;
     }
@@ -53,57 +103,15 @@ public abstract class Usuario {
         return true;
     }
 
-    public int getId() {
-        return id;
-    }
+    
 
-    public boolean setId(int id) {
-        this.id = id;
-        return true;
-    }
 
-    public String getNome() {
-        return nome;
-    }
 
-    public boolean setNome(String nome) {
-        this.nome = nome;
-        return true;
-    }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
 
-    public boolean setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
-        return true;
-    }
 
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
 
-    public boolean setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
-        return true;
-    }
 
-    public String getContato() {
-        return contato;
-    }
 
-    public boolean setContato(String contato) {
-        this.contato = contato;
-        return true;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public boolean setCpf(String cpf) {
-        this.cpf = cpf;
-        return true;
-    }   
+  
 }

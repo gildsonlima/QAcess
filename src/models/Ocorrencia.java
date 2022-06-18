@@ -5,6 +5,7 @@
 package models;
 
 import java.util.Date;
+import java.util.UUID;
 
 /**
  *
@@ -12,20 +13,20 @@ import java.util.Date;
  */
 public class Ocorrencia {
     
-    private int id;
+    private UUID id;
     private Condomino condomino;
-    private Date data;
     private String local;
-    private String status;
     private String descricao;
-
-    public int getId() {
-        return id;
+    private String status;
+    private Date data;
+    
+    public Ocorrencia(){
+        this.status = "Pendente";
+        this.id = UUID.randomUUID();
     }
 
-    public boolean setId(int id) {
-        this.id = id;
-        return true;
+    public UUID getId() {
+        return id;
     }
 
     public Condomino getCondomino() {
@@ -34,6 +35,15 @@ public class Ocorrencia {
 
     public boolean setCondomino(Condomino condomino) {
         this.condomino = condomino;
+        return true;
+    }
+    
+    public String getLocal() {
+        return local;
+    }
+
+    public boolean setLocal(String local) {
+        this.local = local;
         return true;
     }
 
@@ -45,6 +55,15 @@ public class Ocorrencia {
         this.descricao = descricao;
         return true;
     }
+    
+    public String getStatus() {
+        return status;
+    }
+
+    public boolean setStatus(String status) {
+        this.status = status;
+        return true;
+    }   
 
     public Date getData() {
         return data;
@@ -55,22 +74,4 @@ public class Ocorrencia {
         this.data = date;
         return true;
     }
-
-    public String getLocal() {
-        return local;
-    }
-
-    public boolean setLocal(String local) {
-        this.local = local;
-        return true;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public boolean setStatus(String status) {
-        this.status = status;
-        return true;
-    }   
 }
