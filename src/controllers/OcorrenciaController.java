@@ -7,24 +7,24 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Statement;
-import repositors.CorrespondenciaDB;
+import repositors.OcorrenciaDB;
 
 /**
  *
- * @author Atila
+ * @author GCL
  */
-public class CorrespondenciaControlle implements ActionListener {
-    
+public class OcorrenciaController implements ActionListener{
     private Statement statement;
-    private CorrespondenciaDB correspondenciaBD;
+    private OcorrenciaDB ocorrenciaDB;
     
-    public CorrespondenciaControlle(Statement statement, CorrespondenciaDB correspondenciaDB){
+    public OcorrenciaController(Statement statement, OcorrenciaDB ocorrenciaDB){
         this.statement = statement;
-        this.correspondenciaBD = correspondenciaDB;
+        this.ocorrenciaDB = ocorrenciaDB;
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
 }
