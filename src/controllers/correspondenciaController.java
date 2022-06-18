@@ -13,12 +13,12 @@ import repositors.CorrespondenciaDB;
  *
  * @author Atila
  */
-public class CorrespondenciaController implements ActionListener {
+public class correspondenciaController implements ActionListener {
     
     private Statement statement;
     private CorrespondenciaDB correspondenciaBD;
     
-    public CorrespondenciaController(Statement statement, CorrespondenciaDB correspondenciaDB){
+    public correspondenciaController(Statement statement, CorrespondenciaDB correspondenciaDB){
         this.statement = statement;
         this.correspondenciaBD = correspondenciaDB;
     }
