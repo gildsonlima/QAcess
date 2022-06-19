@@ -38,8 +38,8 @@ public class ViewOcorrencia extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        buttonSend = new javax.swing.JButton();
-        cancelButton = new javax.swing.JButton();
+        botaoEnviar = new javax.swing.JButton();
+        botaoCancelar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -111,17 +111,17 @@ public class ViewOcorrencia extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setText("Descrição da ocorrêcia");
 
-        buttonSend.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        buttonSend.setText("Enviar");
-        buttonSend.addActionListener(new java.awt.event.ActionListener() {
+        botaoEnviar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botaoEnviar.setText("Enviar");
+        botaoEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSendActionPerformed(evt);
+                botaoEnviarActionPerformed(evt);
             }
         });
 
-        cancelButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cancelButton.setText("Cancelar");
-        cancelButton.setToolTipText("");
+        botaoCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botaoCancelar.setText("Cancelar");
+        botaoCancelar.setToolTipText("");
 
         jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -130,8 +130,8 @@ public class ViewOcorrencia extends javax.swing.JFrame {
         jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(buttonSend, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(cancelButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(botaoEnviar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(botaoCancelar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -144,9 +144,9 @@ public class ViewOcorrencia extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                            .addComponent(buttonSend)
+                            .addComponent(botaoEnviar)
                             .addGap(18, 18, 18)
-                            .addComponent(cancelButton))
+                            .addComponent(botaoCancelar))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
@@ -178,8 +178,8 @@ public class ViewOcorrencia extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonSend)
-                    .addComponent(cancelButton))
+                    .addComponent(botaoEnviar)
+                    .addComponent(botaoCancelar))
                 .addContainerGap())
         );
 
@@ -241,15 +241,11 @@ public class ViewOcorrencia extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(471, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(192, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleName("Ocorrencia");
@@ -278,9 +274,9 @@ public class ViewOcorrencia extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void buttonSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSendActionPerformed
+    private void botaoEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEnviarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSendActionPerformed
+    }//GEN-LAST:event_botaoEnviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -319,8 +315,8 @@ public class ViewOcorrencia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton buttonSend;
-    public javax.swing.JButton cancelButton;
+    public javax.swing.JButton botaoCancelar;
+    public javax.swing.JButton botaoEnviar;
     private javax.swing.JButton jButton2;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;

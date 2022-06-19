@@ -18,7 +18,7 @@ public class CorrespondenciaDB {
     
     public boolean insertCorrespondencia(Statement statement, Correspondencia correspondencia){
         try{
-            String sql = "insert into correspondencia "
+            String sql = "insert into correspondencias "
                     + "(id, remetente, idEndereco, status, funcionarioRecepcao, dataRecepcao) "
                     + "values ('" + correspondencia.getId() + "', "
                     + "'" + correspondencia.getRemetente() + "', "

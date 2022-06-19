@@ -4,7 +4,7 @@
  */
 package models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
@@ -18,7 +18,7 @@ public class Ocorrencia {
     private String local;
     private String descricao;
     private String status;
-    private Date data;
+    private LocalDateTime data;
     
     public Ocorrencia(){
         this.status = "Pendente";
@@ -65,13 +65,14 @@ public class Ocorrencia {
         return true;
     }   
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
     public boolean setData() {
-        Date date = new Date();
-        this.data = date;
+        
+        this.data = LocalDateTime.now();
+        
         return true;
     }
 }

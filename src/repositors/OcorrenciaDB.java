@@ -16,17 +16,17 @@ public class OcorrenciaDB {
     
     protected ResultSet resultSet;
     
-    public boolean insertUsuario(Statement statement, Ocorrencia ocorrencia){
+    public boolean insertOcorrencia(Statement statement,Ocorrencia ocorrencia){
         try{
-            String sql = "insert into ocorrencia "
-                    + "(id, idCondomino, local, status, descricao, data) "
+            String sql = "insert into ocorrencias "
+                    + "(idocorrencias, local, descricao, status, data) "
                     + "values ('" + ocorrencia.getId()+ "', "
-                    + "'" + ocorrencia.getCondomino().getId() + "', "
+                    //+ "'" + ocorrencia.getCondomino().getId() + "', "
                     + "'" + ocorrencia.getLocal()+ "', "
-                    + "'" + ocorrencia.getStatus() + "', "
                     + "'" + ocorrencia.getDescricao() + "', "
+                    + "'" + ocorrencia.getStatus() + "', "
                     + "'" + ocorrencia.getData() + "');";
-            
+            System.out.println(sql);
             statement.execute(sql);
             return true;
             
