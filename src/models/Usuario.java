@@ -16,19 +16,20 @@ public abstract class Usuario {
     protected UUID id;
     protected String nome;
     protected String cpf;
-    protected Date dataNascimento;
+    protected String dataNascimento;
     protected String email;
     protected String contato;
     protected String estadoCivil;
     protected String usuarioAcesso;
     protected String senha;
     
-    private boolean validarCPF(){
-        return true;
-    }
-    
     public UUID getId() {
         return id;
+    }
+    
+    public boolean setId(UUID uuid) {
+        this.id = uuid;
+        return true;
     }
     
     public String getNome() {
@@ -45,15 +46,15 @@ public abstract class Usuario {
     }
 
     public boolean setCpf(String cpf) {
-        this.cpf = cpf;
-        return true;
+            this.cpf = cpf;
+            return true;
     } 
     
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public boolean setDataNascimento(Date dataNascimento) {
+    public boolean setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
         return true;
     }
@@ -72,6 +73,7 @@ public abstract class Usuario {
     }
 
     public boolean setContato(String contato) {
+        contato = contato.replaceAll("[^0-9]", "");  
         this.contato = contato;
         return true;
     }
@@ -102,16 +104,4 @@ public abstract class Usuario {
         this.senha = senha;
         return true;
     }
-
-    
-
-
-
-
-
-
-
-
-
-  
 }

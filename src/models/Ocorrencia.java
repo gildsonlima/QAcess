@@ -18,7 +18,8 @@ public class Ocorrencia {
     private String local;
     private String descricao;
     private String status;
-    private LocalDateTime data;
+    //private LocalDateTime data;
+    private String data;
     
     public Ocorrencia(){
         this.status = "Pendente";
@@ -27,6 +28,11 @@ public class Ocorrencia {
 
     public UUID getId() {
         return id;
+    }
+    
+    public boolean setId(UUID uuid){
+        this.id = uuid;
+        return true;
     }
 
     public Condomino getCondomino() {
@@ -65,13 +71,13 @@ public class Ocorrencia {
         return true;
     }   
 
-    public LocalDateTime getData() {
+    public String getData() {
         return data;
     }
 
-    public boolean setData() {
-        
-        this.data = LocalDateTime.now();
+    public boolean setData(String data) { 
+        //this.data = LocalDateTime.now();
+        this.data = data;
         
         return true;
     }

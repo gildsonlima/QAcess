@@ -14,7 +14,7 @@ public class Unidade {
     
     private UUID id;
     private String condominio;
-     private String cep;
+    private String cep;
     private String numero;
     private String bloco;
     
@@ -24,6 +24,11 @@ public class Unidade {
     
     public UUID getId() {
         return id;
+    }
+    
+    public boolean setId(UUID uuid) {
+        this.id = uuid;
+        return true;
     }
     
     public String getCondominio() {
@@ -39,7 +44,7 @@ public class Unidade {
         return cep;
     }
 
-    public boolean setCep(String cep) {
+    public boolean setCep(String cep) { 
         this.cep = cep;
         return true;
     }

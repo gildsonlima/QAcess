@@ -15,7 +15,7 @@ public class Correspondencia {
       
    private UUID id;
    private String remetente;
-   private Unidade endereco;
+   private Unidade unidade;
    private String status;
    private Funcionario funcionárioResponsavelPelaRecepcao;
    private Date dataRecepcionadaPeloCondominio;
@@ -41,12 +41,12 @@ public class Correspondencia {
         return true;
     }
     
-    public Unidade getEndereco() {
-        return endereco;
+    public Unidade getUnidade() {
+        return unidade;
     }
 
-    public boolean setEndereco(Unidade endereco) {
-        this.endereco = endereco;
+    public boolean setUnidade(Unidade unidade) {
+        this.unidade = unidade;
         return true;
     }
     

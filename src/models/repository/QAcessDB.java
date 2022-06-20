@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package repositors;
+package models.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,7 +29,7 @@ public class QAcessDB {
     public boolean connect(){
         String server = "jdbc:mysql://localhost:3306/qaccess";
         String user = "root";
-        String pwd = "";
+        String pwd = "ubiq2022";
         String driver = "com.mysql.cj.jdbc.Driver";
         
         try{

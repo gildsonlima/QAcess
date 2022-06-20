@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package repositors;
+package models.repository;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -19,10 +19,10 @@ public class CorrespondenciaDB {
     public boolean insertCorrespondencia(Statement statement, Correspondencia correspondencia){
         try{
             String sql = "insert into correspondencias "
-                    + "(id, remetente, idEndereco, status, funcionarioRecepcao, dataRecepcao) "
+                    + "(idcorrespondencia, remetente, idunidade, status, idfuncionarioRecepcao, dataRecepcaoCondominio) "
                     + "values ('" + correspondencia.getId() + "', "
                     + "'" + correspondencia.getRemetente() + "', "
-                    + "'" + correspondencia.getEndereco().getId() + "', "
+                    + "'" + correspondencia.getUnidade().getId() + "', "
                     + "'" + correspondencia.getStatus() + "', "
                     + "'" + correspondencia.getFuncionárioResponsavelPelaRecepcao().getId() + "', "
                     + "'" + correspondencia.getDataRecepcionadaPeloCondominio() + "');";
