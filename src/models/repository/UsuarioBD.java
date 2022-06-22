@@ -218,20 +218,23 @@ public class UsuarioBD {
                                  String email, String contato, 
                                  String estadoCivil, String idunidade){
         
-        Condomino condomino = new Condomino();
-        Unidade unidade = new Unidade();
-        
-        condomino.setId(UUID.fromString(idcondomino));
-        condomino.setNome(nome);
-        condomino.setCpf(cpf);
-        condomino.setDataNascimento(dataNascimento);
-        condomino.setEmail(email);
-        condomino.setContato(contato);
-        condomino.setEstadoCivil(estadoCivil);
-        unidade.setId(UUID.fromString(idunidade));
-        condomino.setUnidade(unidade);
-        
-        return condomino;
+        if(idcondomino != null){
+            Condomino condomino = new Condomino();
+            Unidade unidade = new Unidade();
+
+            condomino.setId(UUID.fromString(idcondomino));
+            condomino.setNome(nome);
+            condomino.setCpf(cpf);
+            condomino.setDataNascimento(dataNascimento);
+            condomino.setEmail(email);
+            condomino.setContato(contato);
+            condomino.setEstadoCivil(estadoCivil);
+            unidade.setId(UUID.fromString(idunidade));
+            condomino.setUnidade(unidade);
+            return condomino;
+        }else{
+            return null;
+        }
     }
     
     private Funcionario setFuncionario(String idfuncionario, String nome, 

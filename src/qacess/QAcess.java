@@ -11,7 +11,6 @@ import models.repository.QAcessDB;
 import views.ViewOcorrencia;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import models.Condomino;
@@ -22,6 +21,14 @@ import models.repository.UnidadeDB;
 import models.repository.UsuarioBD;
 import views.ViewCorrespondencia;
 
+
+
+// IMPORTANTE!!!!!!!!!!
+// Condomino 'Maria dos Santos' já está cadastrada no sistema. Utilaza-se esse nome 
+// para criação da ocorrência, visto que o desenvolviento das telas para cadastro de usuários e etc
+// estão em desenvolvimento.
+
+// OBS2: Pode-se utilizar, também, os métodos prontos para fazer cadastros e buscar informações.
 
 /**
  *
@@ -50,15 +57,15 @@ public class QAcess {
         viewOcorrencia.setVisible(true);
         
         ViewCorrespondencia viewCorrespondencia = new ViewCorrespondencia();
-        viewCorrespondencia.setVisible(true);
+        viewCorrespondencia.setVisible(false);
         OcorrenciaController ocorrenciaController = new OcorrenciaController(statement, viewOcorrencia);
         
 //        UnidadeDB unidadeDB = new UnidadeDB(statement);
 //        Unidade unidade = new Unidade();
 //        
-//        unidade.setCondominio("Condominio Ã�guas Claras");
+//        unidade.setCondominio("Condomínio Vila Laura");
 //        unidade.setCep("41230540");
-//        unidade.setBloco("A1");
+//        unidade.setBloco("B13");
 //        unidade.setNumero("129");
 //        
 //        unidadeDB.insertUnidade(unidade);
@@ -66,17 +73,16 @@ public class QAcess {
 //        UsuarioBD usuarioBD = new UsuarioBD(statement);
 //        Condomino condomino = new Condomino();
 //        
-//        condomino.setNome("Atila Bezerra");
-//        condomino.setCpf("07189087699");
-//        condomino.setContato("71991032377");
+//        condomino.setNome("Maria dos Santos");
+//        condomino.setCpf("07188347690");
+//        condomino.setContato("71985306742");
 //        condomino.setDataNascimento("16/02/2022");
-//        condomino.setDataNascimento("16/02/2022");
-//        condomino.setEmail("atila@gmail.com");
+//        condomino.setEmail("maria@gmail.com");
 //        condomino.setEstadoCivil("Casado");
 //        condomino.setUnidade(unidade);
 //        
 //        usuarioBD.insertUsuario(condomino);
-//        
+////        
 //        OcorrenciaDB ocorrenciaDB = new OcorrenciaDB(statement);
 //        Ocorrencia ocorrencia = new Ocorrencia();
 //        

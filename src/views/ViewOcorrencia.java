@@ -214,8 +214,22 @@ public class ViewOcorrencia extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(tableOcorrencia);
+        if (tableOcorrencia.getColumnModel().getColumnCount() > 0) {
+            tableOcorrencia.getColumnModel().getColumn(0).setResizable(false);
+            tableOcorrencia.getColumnModel().getColumn(1).setResizable(false);
+            tableOcorrencia.getColumnModel().getColumn(2).setResizable(false);
+            tableOcorrencia.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setText("Pesquisa de ocorrências");

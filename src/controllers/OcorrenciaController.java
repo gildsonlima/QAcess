@@ -50,17 +50,22 @@ public class OcorrenciaController implements ActionListener{
             
             Condomino condomino = condominoDB.listCondominoNome(this.viewOcorrencia.txtNome.getText()) ;
             
-            Ocorrencia ocorrencia = new Ocorrencia();
-            ocorrencia.setDescricao(this.viewOcorrencia.txtOcorrencia.getText());
-            ocorrencia.setLocal(this.viewOcorrencia.txtLocal.getText());
+            if(condomino != null){
+                Ocorrencia ocorrencia = new Ocorrencia();
+                ocorrencia.setDescricao(this.viewOcorrencia.txtOcorrencia.getText());
+                ocorrencia.setLocal(this.viewOcorrencia.txtLocal.getText());
+
+                ocorrencia.setCondomino(condomino);
+                fillTable(this.viewOcorrencia.tableOcorrencia);
+                if(this.ocorrenciaDB.insertOcorrencia(ocorrencia)){
+                    System.out.println("Sucesso ao inserir a Ocorrencia!");
+               }else{
+                   System.out.println("Erro ao inserir a Ocorrencia!");
+               }
+            }else{
+                JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
+            }
             
-            ocorrencia.setCondomino(condomino);
-            fillTable(this.viewOcorrencia.tableOcorrencia);
-            if(this.ocorrenciaDB.insertOcorrencia(ocorrencia)){
-                System.out.println("Sucesso ao inserir a Ocorrencia!");
-           }else{
-               System.out.println("Erro ao inserir a Ocorrencia!");
-           }
             
         }else{
             if(e.getSource() == this.viewOcorrencia.botaoPesquisa){
