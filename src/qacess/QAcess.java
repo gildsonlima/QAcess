@@ -70,6 +70,7 @@ public class QAcess {
 //        condomino.setCpf("07189087699");
 //        condomino.setContato("71991032377");
 //        condomino.setDataNascimento("16/02/2022");
+//        condomino.setDataNascimento(formato.parse("16/02/2022"));
 //        condomino.setEmail("atila@gmail.com");
 //        condomino.setEstadoCivil("Casado");
 //        condomino.setUnidade(unidade);

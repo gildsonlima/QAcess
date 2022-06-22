@@ -69,7 +69,7 @@ public class UsuarioBD {
                                             resultSet.getString("idfuncionario"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getString("dataNascimento"),
+                                            resultSet.getDate("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -97,7 +97,7 @@ public class UsuarioBD {
                                             resultSet.getString("idcondomino"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getString("dataNascimento"),
+                                            resultSet.getDate("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -129,7 +129,7 @@ public class UsuarioBD {
                                             resultSet.getString("idcondomino"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getString("dataNascimento"),
+                                            resultSet.getDate("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -161,7 +161,7 @@ public class UsuarioBD {
                                             resultSet.getString("idfuncionario"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getString("dataNascimento"),
+                                            resultSet.getDate("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -190,7 +190,7 @@ public class UsuarioBD {
                                             resultSet.getString("idcondomino"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getString("dataNascimento"),
+                                            resultSet.getDate("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -209,39 +209,33 @@ public class UsuarioBD {
             
         }catch(Exception e){
             System.out.println("Error: "+e.getMessage());
-            return null;
         }
-        
+        return condomino;
     }
     
     private Condomino setCondomino(String idcondomino, String nome, 
-                                 String cpf, String dataNascimento, 
+                                 String cpf, Date dataNascimento, 
                                  String email, String contato, 
                                  String estadoCivil, String idunidade){
         
-        if(idcondomino != null){
-            Condomino condomino = new Condomino();
-            Unidade unidade = new Unidade();
-
-            condomino.setId(UUID.fromString(idcondomino));
-            condomino.setNome(nome);
-            condomino.setCpf(cpf);
-            condomino.setDataNascimento(dataNascimento);
-            condomino.setEmail(email);
-            condomino.setContato(contato);
-            condomino.setEstadoCivil(estadoCivil);
-            unidade.setId(UUID.fromString(idunidade));
-            condomino.setUnidade(unidade);
-
-            return condomino;
-        }else{
-            return null;
-        }
+        Condomino condomino = new Condomino();
+        Unidade unidade = new Unidade();
         
+        condomino.setId(UUID.fromString(idcondomino));
+        condomino.setNome(nome);
+        condomino.setCpf(cpf);
+        condomino.setDataNascimento(dataNascimento);
+        condomino.setEmail(email);
+        condomino.setContato(contato);
+        condomino.setEstadoCivil(estadoCivil);
+        unidade.setId(UUID.fromString(idunidade));
+        condomino.setUnidade(unidade);
+        
+        return condomino;
     }
     
     private Funcionario setFuncionario(String idfuncionario, String nome, 
-                                 String cpf, String dataNascimento, 
+                                 String cpf, Date dataNascimento, 
                                  String email, String contato, 
                                  String estadoCivil, String cargo){
         
