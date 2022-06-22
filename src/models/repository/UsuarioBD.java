@@ -56,7 +56,7 @@ public class UsuarioBD {
         }
     }
     
-    public ArrayList<Usuario> listFuncionarios (){
+    public ArrayList<Usuario> getFuncionariosDB (){
         ArrayList<Usuario> funcionarios = new ArrayList<>();
         try{
             String sql = "select * from funcionarios";
@@ -85,7 +85,7 @@ public class UsuarioBD {
         return funcionarios;
     }
     
-    public ArrayList<Usuario> listCondominos (){
+    public ArrayList<Usuario> getCondominosDB (){
         ArrayList<Usuario> condominos = new ArrayList<>();
         try{
             String sql = "select * from condominos";
@@ -108,7 +108,7 @@ public class UsuarioBD {
             
             for (Usuario condom : condominos) {
                 UnidadeDB unidadeDB = new UnidadeDB(this.statement);
-                Unidade unidade = unidadeDB.listUnidadeUnique(((Condomino)condom).getUnidade().getId().toString());
+                Unidade unidade = unidadeDB.getUnidadeDB(((Condomino)condom).getUnidade().getId().toString());
                 ((Condomino) condom).setUnidade(unidade);
             }            
             
@@ -119,7 +119,7 @@ public class UsuarioBD {
         return condominos;
     }
 
-    public Condomino listCondominoUnique(String idcondomino){
+    public Condomino getCondominoDB(String idcondomino){
         Condomino condomino = new Condomino();
         try{
             String sql = "SELECT * FROM condominos WHERE idcondomino = '" + idcondomino + "';";
@@ -139,7 +139,7 @@ public class UsuarioBD {
             
             if(condomino.getUnidade()!= null){
                 UnidadeDB unidadeDB = new UnidadeDB(this.statement);
-                Unidade unidade = unidadeDB.listUnidadeUnique(condomino.getUnidade().getId().toString());
+                Unidade unidade = unidadeDB.getUnidadeDB(condomino.getUnidade().getId().toString());
                 condomino.setUnidade(unidade);
                 return condomino;
             }else{
@@ -151,7 +151,7 @@ public class UsuarioBD {
         }
     }
     
-    public Funcionario listFuncionarioUnique(String idfuncionario){
+    public Funcionario getFuncionarioDB(String idfuncionario){
         Funcionario funcionario = new Funcionario();
         try{
             String sql = "SELECT * FROM funcionarios WHERE idfuncionario = '" + idfuncionario + "';";
@@ -180,7 +180,7 @@ public class UsuarioBD {
         }
     }
     
-    public Condomino listCondominoNome(String nome){
+    public Condomino getCondominoByNome(String nome){
         Condomino condomino = new Condomino();
         try{
             String sql = "SELECT * FROM condominos WHERE nome = '" + nome + "';";
@@ -200,7 +200,7 @@ public class UsuarioBD {
             
             if(condomino.getUnidade()!= null){
                 UnidadeDB unidadeDB = new UnidadeDB(this.statement);
-                Unidade unidade = unidadeDB.listUnidadeUnique(condomino.getUnidade().getId().toString());
+                Unidade unidade = unidadeDB.getUnidadeDB(condomino.getUnidade().getId().toString());
                 condomino.setUnidade(unidade);
                 return condomino;
             }else{

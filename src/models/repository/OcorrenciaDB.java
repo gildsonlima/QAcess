@@ -47,7 +47,7 @@ public class OcorrenciaDB {
         }
     }
     
-    public ArrayList<Ocorrencia> listOcorrencias(){
+    public ArrayList<Ocorrencia> getOcorrenciasDB(){
         ArrayList<Ocorrencia> Ocorrencias = new ArrayList<>();
         try{
             String sql = "select * from ocorrencias";
@@ -68,7 +68,7 @@ public class OcorrenciaDB {
             
             for (Ocorrencia ocorren : Ocorrencias) {
                 UsuarioBD usuarioBD = new UsuarioBD(this.statement);
-                Condomino condomino = usuarioBD.listCondominoUnique(ocorren.getCondomino().getId().toString());
+                Condomino condomino = usuarioBD.getCondominoDB(ocorren.getCondomino().getId().toString());
                 ocorren.setCondomino(condomino);
             }  
             
@@ -79,7 +79,7 @@ public class OcorrenciaDB {
         return Ocorrencias;
     }
     
-    public Ocorrencia listOcorrenciaUnique(String idocorrencia){
+    public Ocorrencia getOcorrenciaDB(String idocorrencia){
         Ocorrencia ocorrencia = new Ocorrencia();
         try{
             String sql = "SELECT * FROM ocorrencias WHERE idocorrencia = '" + idocorrencia + "';";
@@ -96,7 +96,7 @@ public class OcorrenciaDB {
             
             if(ocorrencia.getCondomino() != null){
                 UsuarioBD usuarioBD = new UsuarioBD(this.statement);
-                Condomino condomino = usuarioBD.listCondominoUnique(ocorrencia.getCondomino().getId().toString());
+                Condomino condomino = usuarioBD.getCondominoDB(ocorrencia.getCondomino().getId().toString());
                 ocorrencia.setCondomino(condomino);
                 return ocorrencia;
             }else{
@@ -109,7 +109,7 @@ public class OcorrenciaDB {
         }
     }
     
-    public Ocorrencia setOcorrencia(String idocorrencia, 
+    private Ocorrencia setOcorrencia(String idocorrencia, 
                                     String local, String descricao, 
                                     String status, String data, String idcondomino){
         

@@ -48,7 +48,7 @@ public class OcorrenciaController implements ActionListener{
         
         if(e.getSource() == this.viewOcorrencia.botaoEnviar){
             
-            Condomino condomino = condominoDB.listCondominoNome(this.viewOcorrencia.txtNome.getText()) ;
+            Condomino condomino = condominoDB.getCondominoByNome(this.viewOcorrencia.txtNome.getText()) ;
             
             if(condomino != null){
                 Ocorrencia ocorrencia = new Ocorrencia();
@@ -96,7 +96,7 @@ public class OcorrenciaController implements ActionListener{
         // criar as colunas de cada linha
         
         Object [] colunas  = new Object[4];
-        ArrayList<Ocorrencia> ocorrencias = this.ocorrenciaDB.listOcorrencias();
+        ArrayList<Ocorrencia> ocorrencias = this.ocorrenciaDB.getOcorrenciasDB();
         for (Ocorrencia ocorrencia : ocorrencias) {
             condomino = ocorrencia.getCondomino();
             colunas[0] = condomino.getNome();

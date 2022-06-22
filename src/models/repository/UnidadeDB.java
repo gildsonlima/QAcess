@@ -41,7 +41,7 @@ public class UnidadeDB {
         }
     }
     
-    public ArrayList<Unidade> listUnidades(){
+    public ArrayList<Unidade> getUnidadesDB(){
         ArrayList<Unidade> unidades = new ArrayList<>();
         try{
             String sql = "select * from unidades";
@@ -65,7 +65,7 @@ public class UnidadeDB {
         
     }
     
-    public Unidade listUnidadeUnique(String idunidade){
+    public Unidade getUnidadeDB(String idunidade){
         Unidade unidade= new Unidade();
         try{
             String sql = "SELECT * FROM unidades WHERE idunidade = '" + idunidade + "';";
