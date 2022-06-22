@@ -46,34 +46,43 @@ public class QAcess {
         
         Statement statement = cdb.getStatement();
         
-        ViewOcorrencia viewOcorrencia = new ViewOcorrencia(statement);
+        ViewOcorrencia viewOcorrencia = new ViewOcorrencia();
         viewOcorrencia.setVisible(true);
         
         ViewCorrespondencia viewCorrespondencia = new ViewCorrespondencia();
         viewCorrespondencia.setVisible(true);
         OcorrenciaController ocorrenciaController = new OcorrenciaController(statement, viewOcorrencia);
         
-//        UnidadeDB unidadeDB = new UnidadeDB(statement);
-//        Unidade unidade = new Unidade();
-//        
-//        unidade.setCondominio("Condominio Águas Claras");
-//        unidade.setCep("41230540");
-//        unidade.setBloco("A1");
-//        unidade.setNumero("129");
-//        
-//        unidadeDB.insertUnidade(unidade);
-//           
-//        UsuarioBD usuarioBD = new UsuarioBD(statement);
-//        Condomino condomino = new Condomino();
-//        
-//        condomino.setNome("Atila Bezerra");
-//        condomino.setCpf("07189087699");
-//        condomino.setDataNascimento(formato.parse("16/02/2022"));
-//        condomino.setEmail("atila@gmail.com");
-//        condomino.setEstadoCivil("Casado");
-//        condomino.setUnidade(unidade);
-//        
-//        usuarioBD.insertUsuario(condomino);
+        UnidadeDB unidadeDB = new UnidadeDB(statement);
+        Unidade unidade = new Unidade();
+        
+        unidade.setCondominio("Condominio Águas Claras");
+        unidade.setCep("41230540");
+        unidade.setBloco("A1");
+        unidade.setNumero("129");
+        
+        unidadeDB.insertUnidade(unidade);
+           
+        UsuarioBD usuarioBD = new UsuarioBD(statement);
+        Condomino condomino = new Condomino();
+        
+        condomino.setNome("Atila Bezerra");
+        condomino.setCpf("07189087699");
+        condomino.setContato("71991032377");
+        condomino.setDataNascimento("16/02/2022");
+        condomino.setEmail("atila@gmail.com");
+        condomino.setEstadoCivil("Casado");
+        condomino.setUnidade(unidade);
+        
+        usuarioBD.insertUsuario(condomino);
+        
+        Condomino condomino2 = usuarioBD.listCondominoNome("Atisla Bezerra");
+        
+//        Condomino condomino3 = new Condomino();
+//        if(condomino3.getNome() == null){
+//            System.out.println("Iaiii");
+//        }
+        
 //        
 //        OcorrenciaDB ocorrenciaDB = new OcorrenciaDB(statement);
 //        Ocorrencia ocorrencia = new Ocorrencia();
