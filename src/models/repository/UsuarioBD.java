@@ -137,14 +137,18 @@ public class UsuarioBD {
                                          );
             }
             
-            UnidadeDB unidadeDB = new UnidadeDB(this.statement);
-            Unidade unidade = unidadeDB.listUnidadeUnique(condomino.getUnidade().getId().toString());
-            condomino.setUnidade(unidade);
-            
+            if(condomino.getUnidade()!= null){
+                UnidadeDB unidadeDB = new UnidadeDB(this.statement);
+                Unidade unidade = unidadeDB.listUnidadeUnique(condomino.getUnidade().getId().toString());
+                condomino.setUnidade(unidade);
+                return condomino;
+            }else{
+                return null;
+            }
         }catch(Exception e){
             System.out.println("Error: "+e.getMessage());
+            return null;
         }
-        return condomino;
     }
     
     public Funcionario listFuncionarioUnique(String idfuncionario){
@@ -164,10 +168,16 @@ public class UsuarioBD {
                                             resultSet.getString("cargo")
                                          );
             }
+            
+            if(funcionario.getNome() != null){
+                return funcionario;
+            }else{
+                return null;
+            }
         }catch(Exception e){
             System.out.println("Error: " + e.getMessage());
+            return null;
         }
-        return funcionario;
     }
     
     public Condomino listCondominoNome(String nome){
@@ -188,7 +198,7 @@ public class UsuarioBD {
                                          );
             }
             
-            if(condomino.getNome()!= null){
+            if(condomino.getUnidade()!= null){
                 UnidadeDB unidadeDB = new UnidadeDB(this.statement);
                 Unidade unidade = unidadeDB.listUnidadeUnique(condomino.getUnidade().getId().toString());
                 condomino.setUnidade(unidade);
@@ -235,17 +245,21 @@ public class UsuarioBD {
                                  String email, String contato, 
                                  String estadoCivil, String cargo){
         
-        Funcionario funcionario = new Funcionario();
-        
-        funcionario.setId(UUID.fromString(idfuncionario));
-        funcionario.setNome(nome);
-        funcionario.setCpf(cpf);
-        funcionario.setDataNascimento(dataNascimento);
-        funcionario.setEmail(email);
-        funcionario.setContato(contato);
-        funcionario.setEstadoCivil(estadoCivil);
-        funcionario.setCargo(cargo);
-        
-        return funcionario;
+        if(idfuncionario != null){
+            Funcionario funcionario = new Funcionario();
+
+            funcionario.setId(UUID.fromString(idfuncionario));
+            funcionario.setNome(nome);
+            funcionario.setCpf(cpf);
+            funcionario.setDataNascimento(dataNascimento);
+            funcionario.setEmail(email);
+            funcionario.setContato(contato);
+            funcionario.setEstadoCivil(estadoCivil);
+            funcionario.setCargo(cargo);
+
+            return funcionario;
+        }else{
+            return null;
+        }
     }
 }

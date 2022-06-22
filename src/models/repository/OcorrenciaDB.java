@@ -93,30 +93,41 @@ public class OcorrenciaDB {
                                             resultSet.getDate("data"),
                                             resultSet.getString("idcondomino"));
             }
-            UsuarioBD usuarioBD = new UsuarioBD(this.statement);
-            Condomino condomino = usuarioBD.listCondominoUnique(ocorrencia.getCondomino().getId().toString());
-            ocorrencia.setCondomino(condomino);
+            
+            if(ocorrencia.getCondomino() != null){
+                UsuarioBD usuarioBD = new UsuarioBD(this.statement);
+                Condomino condomino = usuarioBD.listCondominoUnique(ocorrencia.getCondomino().getId().toString());
+                ocorrencia.setCondomino(condomino);
+                return ocorrencia;
+            }else{
+                return null;
+            }
+            
         }catch(Exception e){
             System.out.println("Error: "+e.getMessage());
+            return null;
         }
-        return ocorrencia;
     }
     
     public Ocorrencia setOcorrencia(String idocorrencia, 
                                     String local, String descricao, 
                                     String status, Date data, String idcondomino){
         
-        Ocorrencia ocorrencia = new Ocorrencia();
-        Condomino condomino = new Condomino();
-        
-        ocorrencia.setId(UUID.fromString(idocorrencia));
-        ocorrencia.setLocal(local);
-        ocorrencia.setDescricao(descricao);
-        ocorrencia.setStatus(status);
-        ocorrencia.setData(data);
-        condomino.setId(UUID.fromString(idcondomino));
-        ocorrencia.setCondomino(condomino);
-        
-        return ocorrencia;
+        if(idocorrencia != null){
+            Ocorrencia ocorrencia = new Ocorrencia();
+            Condomino condomino = new Condomino();
+
+            ocorrencia.setId(UUID.fromString(idocorrencia));
+            ocorrencia.setLocal(local);
+            ocorrencia.setDescricao(descricao);
+            ocorrencia.setStatus(status);
+            ocorrencia.setData(data);
+            condomino.setId(UUID.fromString(idcondomino));
+            ocorrencia.setCondomino(condomino);
+
+            return ocorrencia;
+        }else{
+            return null;
+        }
     }
 }

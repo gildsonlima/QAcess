@@ -57,10 +57,12 @@ public class UnidadeDB {
                                         resultSet.getString("bloco"));
                 unidades.add(unidade);       
             }
+            return unidades;
         }catch(Exception e){
             System.out.println("Error: " + e.getMessage());
+            return null;
         }
-        return unidades;
+        
     }
     
     public Unidade listUnidadeUnique(String idunidade){
@@ -76,22 +78,33 @@ public class UnidadeDB {
                                         resultSet.getString("numero"), 
                                         resultSet.getString("bloco"));
             }
+            
+            if(unidade.getCondominio() != null){
+                return unidade;
+            }else{
+                return null;
+            }
         }catch(Exception e){
             System.out.println("Error: "+e.getMessage());
+            return null;
         }
-        return unidade;
     }
     
     private Unidade setUnidade(String idunidade, String condominio, 
                                 String cep, String numero, String bloco){
         
-        Unidade unidade = new Unidade();
-        unidade.setId(UUID.fromString(idunidade));
-        unidade.setCondominio(condominio);
-        unidade.setCep(cep);
-        unidade.setNumero(numero);
-        unidade.setBloco(bloco);
         
-        return unidade;
+        if(idunidade != null){
+            Unidade unidade = new Unidade();
+            unidade.setId(UUID.fromString(idunidade));
+            unidade.setCondominio(condominio);
+            unidade.setCep(cep);
+            unidade.setNumero(numero);
+            unidade.setBloco(bloco);
+
+            return unidade;
+        }else{
+            return null;
+        }     
     }
 }
