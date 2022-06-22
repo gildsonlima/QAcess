@@ -18,12 +18,13 @@ public class Ocorrencia {
     private String local;
     private String descricao;
     private String status;
-    private Date data;
+    private String data;
     
     public Ocorrencia(){
         this.status = "Pendente";
         this.id = UUID.randomUUID();
-        this.data = new Date();
+        Date date = new Date();
+        this.data = date.toString();
     }
 
     public UUID getId() {
@@ -71,11 +72,11 @@ public class Ocorrencia {
         return true;
     }   
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public boolean setData(Date data) { 
+    public boolean setData(String data) { 
         
         this.data = data;
         

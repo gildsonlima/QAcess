@@ -60,7 +60,7 @@ public class OcorrenciaDB {
                                             resultSet.getString("local"),
                                             resultSet.getString("descricao"), 
                                             resultSet.getString("status"),
-                                            resultSet.getDate("data"),
+                                            resultSet.getString("data"),
                                             resultSet.getString("idcondomino"));
                 
                 Ocorrencias.add(ocorrencia);
@@ -90,7 +90,7 @@ public class OcorrenciaDB {
                                             resultSet.getString("local"),
                                             resultSet.getString("descricao"),
                                             resultSet.getString("status"),
-                                            resultSet.getDate("data"),
+                                            resultSet.getString("data"),
                                             resultSet.getString("idcondomino"));
             }
             
@@ -111,7 +111,7 @@ public class OcorrenciaDB {
     
     public Ocorrencia setOcorrencia(String idocorrencia, 
                                     String local, String descricao, 
-                                    String status, Date data, String idcondomino){
+                                    String status, String data, String idcondomino){
         
         if(idocorrencia != null){
             Ocorrencia ocorrencia = new Ocorrencia();

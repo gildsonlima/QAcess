@@ -69,7 +69,7 @@ public class UsuarioBD {
                                             resultSet.getString("idfuncionario"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getDate("dataNascimento"),
+                                            resultSet.getString("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -97,7 +97,7 @@ public class UsuarioBD {
                                             resultSet.getString("idcondomino"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getDate("dataNascimento"),
+                                            resultSet.getString("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -129,7 +129,7 @@ public class UsuarioBD {
                                             resultSet.getString("idcondomino"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getDate("dataNascimento"),
+                                            resultSet.getString("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -161,7 +161,7 @@ public class UsuarioBD {
                                             resultSet.getString("idfuncionario"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getDate("dataNascimento"),
+                                            resultSet.getString("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -190,7 +190,7 @@ public class UsuarioBD {
                                             resultSet.getString("idcondomino"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getDate("dataNascimento"),
+                                            resultSet.getString("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -214,7 +214,7 @@ public class UsuarioBD {
     }
     
     private Condomino setCondomino(String idcondomino, String nome, 
-                                 String cpf, Date dataNascimento, 
+                                 String cpf, String dataNascimento, 
                                  String email, String contato, 
                                  String estadoCivil, String idunidade){
         
@@ -235,7 +235,7 @@ public class UsuarioBD {
     }
     
     private Funcionario setFuncionario(String idfuncionario, String nome, 
-                                 String cpf, Date dataNascimento, 
+                                 String cpf, String dataNascimento, 
                                  String email, String contato, 
                                  String estadoCivil, String cargo){
         
