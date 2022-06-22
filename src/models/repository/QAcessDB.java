@@ -16,7 +16,7 @@ import java.sql.Statement;
 public class QAcessDB {
     private Connection connection;
     private Statement statement;
-    protected ResultSet resultSet;
+    private ResultSet resultSet;
 
     public Connection getConnection() {
         return connection;

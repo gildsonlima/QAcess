@@ -14,7 +14,7 @@ import models.Correspondencia;
  */
 public class CorrespondenciaDB {
     
-    protected ResultSet resultSet;
+    private ResultSet resultSet;
     
     public boolean insertCorrespondencia(Statement statement, Correspondencia correspondencia){
         try{
