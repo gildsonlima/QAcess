@@ -30,7 +30,7 @@ public class QAcessDB {
     public boolean connect(){
         String server = "jdbc:mysql://localhost:3306/qaccess";
         String user = "root";
-        String pwd = "123456";
+        String pwd = "ubiq2022";
         String driver = "com.mysql.cj.jdbc.Driver";
         
         try{

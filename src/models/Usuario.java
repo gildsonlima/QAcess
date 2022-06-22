@@ -16,7 +16,7 @@ public abstract class Usuario {
     protected UUID id;
     protected String nome;
     protected String cpf;
-    protected Date dataNascimento;
+    protected String dataNascimento;
     protected String email;
     protected String contato;
     protected String estadoCivil;
@@ -50,11 +50,11 @@ public abstract class Usuario {
             return true;
     } 
     
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public boolean setDataNascimento(Date dataNascimento) {
+    public boolean setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
         return true;
     }
