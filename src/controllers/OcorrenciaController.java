@@ -42,25 +42,19 @@ public class OcorrenciaController implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         
         if(e.getSource() == this.viewOcorrencia.botaoEnviar){
-            verificarCondomino(this.viewOcorrencia.txtNome.getText());
-            Condomino condomino = verificarCondomino(this.viewOcorrencia.txtNome.getText());
             
-            if(condomino != null){
-                Ocorrencia ocorrencia = new Ocorrencia();
-                ocorrencia.setDescricao(this.viewOcorrencia.txtOcorrencia.getText());
-                ocorrencia.setLocal(this.viewOcorrencia.txtNome.getText());
-                ocorrencia.setCondomino(condomino);
-                fillTable(this.viewOcorrencia.tableOcorrencia);
-                if(this.ocorrenciaDB.insertOcorrencia(ocorrencia)){
-                    System.out.println("Sucesso ao inserir a Ocorrencia!");
-                }else{
-                    System.out.println("Erro ao inserir a Ocorrencia!");
-                }
-            }else{
-                JOptionPane.showConfirmDialog(null, "Deu ruim aqui vei");
-            }
+            Condomino condomino = new Condomino();
             
-            
+            Ocorrencia ocorrencia = new Ocorrencia();
+            ocorrencia.setDescricao(this.viewOcorrencia.txtOcorrencia.getText());
+            ocorrencia.setLocal(this.viewOcorrencia.txtLocal.getText());
+            ocorrencia.setCondomino(condomino);
+            fillTable(this.viewOcorrencia.tableOcorrencia);
+            if(this.ocorrenciaDB.insertOcorrencia(ocorrencia)){
+                System.out.println("Sucesso ao inserir a Ocorrencia!");
+           }else{
+               System.out.println("Erro ao inserir a Ocorrencia!");
+           }
             
         }       
     }
@@ -89,14 +83,4 @@ public class OcorrenciaController implements ActionListener{
         }
     }
     
-    
-    private Condomino verificarCondomino(String nome){
-        UsuarioBD usuarioBD = new UsuarioBD(statement);
-        Condomino condomino = usuarioBD.listCondominoNome(nome);
-        if(condomino == null){
-            return null;
-        }else{
-            return condomino;
-        }
-    }
 }
