@@ -202,7 +202,6 @@ public class ViewOcorrencia extends javax.swing.JFrame {
         botaoPesquisa.setText("Pesquisar");
 
         txtPesquisa.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtPesquisa.setText("Digite sua pesquisa");
         txtPesquisa.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         tableOcorrencia.setModel(new javax.swing.table.DefaultTableModel(
