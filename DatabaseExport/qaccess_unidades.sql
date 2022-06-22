@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `unidades`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `unidades` (
   `idunidade` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `condominio` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cep` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `numero` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `condominio` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cep` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `numero` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci DEFAULT NULL,
   `bloco` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`idunidade`),
   UNIQUE KEY `idunidade_UNIQUE` (`idunidade`)
@@ -39,6 +39,7 @@ CREATE TABLE `unidades` (
 
 LOCK TABLES `unidades` WRITE;
 /*!40000 ALTER TABLE `unidades` DISABLE KEYS */;
+INSERT INTO `unidades` VALUES ('8f91a04d-3d82-4199-aebc-1768fbb6ea54','Condomínio Vila Laura','41230540','129','B13');
 /*!40000 ALTER TABLE `unidades` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-20  0:56:19
+-- Dump completed on 2022-06-22 16:54:09

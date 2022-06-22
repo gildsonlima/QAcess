@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `ocorrencias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ocorrencias` (
-  `idOcorrencia` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `idOcorrencia` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci NOT NULL,
   `local` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci DEFAULT NULL,
   `descricao` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
   `status` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci DEFAULT NULL,
   `idCondomino` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
-  `data` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `data` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idOcorrencia`),
   UNIQUE KEY `idOcorrencia_UNIQUE` (`idOcorrencia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
@@ -40,6 +40,7 @@ CREATE TABLE `ocorrencias` (
 
 LOCK TABLES `ocorrencias` WRITE;
 /*!40000 ALTER TABLE `ocorrencias` DISABLE KEYS */;
+INSERT INTO `ocorrencias` VALUES ('4c0da050-b6fd-4484-8193-2597561d0d34','Piscina','Piscina quebrada.','Pendente','be5f66b9-d047-40de-87d7-447a9e37e788','22/06/2022');
 /*!40000 ALTER TABLE `ocorrencias` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-20  0:56:20
+-- Dump completed on 2022-06-22 16:54:09

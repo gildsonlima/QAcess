@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `correspondencias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `correspondencias` (
-  `idCorrespondencia` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `idCorrespondencia` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci NOT NULL,
   `remetente` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci DEFAULT NULL,
   `idUnidade` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-20  0:56:19
+-- Dump completed on 2022-06-22 16:54:09
