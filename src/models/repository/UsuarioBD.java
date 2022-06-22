@@ -7,6 +7,7 @@ package models.repository;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.UUID;
 import models.Condomino;
 import models.Funcionario;
@@ -68,7 +69,7 @@ public class UsuarioBD {
                                             resultSet.getString("idfuncionario"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getString("dataNascimento"),
+                                            resultSet.getDate("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -96,7 +97,7 @@ public class UsuarioBD {
                                             resultSet.getString("idcondomino"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getString("dataNascimento"),
+                                            resultSet.getDate("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -128,7 +129,7 @@ public class UsuarioBD {
                                             resultSet.getString("idcondomino"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getString("dataNascimento"),
+                                            resultSet.getDate("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -156,7 +157,7 @@ public class UsuarioBD {
                                             resultSet.getString("idfuncionario"),
                                             resultSet.getString("nome"),
                                             resultSet.getString("cpf"),
-                                            resultSet.getString("dataNascimento"),
+                                            resultSet.getDate("dataNascimento"),
                                             resultSet.getString("email"),
                                             resultSet.getString("contato"),
                                             resultSet.getString("estadoCivil"),
@@ -169,8 +170,36 @@ public class UsuarioBD {
         return funcionario;
     }
     
+    public Condomino listCondominoNome(String nome){
+        Condomino condomino = new Condomino();
+        try{
+            String sql = "SELECT * FROM condominos WHERE nome = '" + nome + "';";
+            this.resultSet = this.statement.executeQuery(sql);
+            while (this.resultSet.next()) {
+                condomino = setCondomino(
+                                            resultSet.getString("idcondomino"),
+                                            resultSet.getString("nome"),
+                                            resultSet.getString("cpf"),
+                                            resultSet.getDate("dataNascimento"),
+                                            resultSet.getString("email"),
+                                            resultSet.getString("contato"),
+                                            resultSet.getString("estadoCivil"),
+                                            resultSet.getString("idunidade")
+                                         );
+            }
+            
+//            UnidadeDB unidadeDB = new UnidadeDB(this.statement);
+//            Unidade unidade = unidadeDB.listUnidadeUnique(condomino.getUnidade().getId().toString());
+//            condomino.setUnidade(unidade);
+            
+        }catch(Exception e){
+            System.out.println("Error: "+e.getMessage());
+        }
+        return condomino;
+    }
+    
     private Condomino setCondomino(String idcondomino, String nome, 
-                                 String cpf, String dataNascimento, 
+                                 String cpf, Date dataNascimento, 
                                  String email, String contato, 
                                  String estadoCivil, String idunidade){
         
@@ -191,7 +220,7 @@ public class UsuarioBD {
     }
     
     private Funcionario setFuncionario(String idfuncionario, String nome, 
-                                 String cpf, String dataNascimento, 
+                                 String cpf, Date dataNascimento, 
                                  String email, String contato, 
                                  String estadoCivil, String cargo){
         

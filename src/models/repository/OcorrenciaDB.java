@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.UUID;
 import models.Condomino;
 import models.Ocorrencia;
@@ -22,6 +23,7 @@ public class OcorrenciaDB {
     private ResultSet resultSet;
     private Statement statement;
     
+    
     public OcorrenciaDB(Statement statement){
         this.statement = statement;
     }
@@ -30,7 +32,7 @@ public class OcorrenciaDB {
         try{
             String sql = "insert into ocorrencias "
                     + "(idocorrencia, idcondomino, local, descricao, status, data) "
-                    + "values ('" + ocorrencia.getId()+ "', "
+                    + "values ('" + ocorrencia.getId() + "', "
                     + "'" + ocorrencia.getCondomino().getId() + "', "
                     + "'" + ocorrencia.getLocal()+ "', "
                     + "'" + ocorrencia.getDescricao() + "', "
@@ -58,7 +60,7 @@ public class OcorrenciaDB {
                                             resultSet.getString("local"),
                                             resultSet.getString("descricao"), 
                                             resultSet.getString("status"),
-                                            resultSet.getString("data"),
+                                            resultSet.getDate("data"),
                                             resultSet.getString("idcondomino"));
                 
                 Ocorrencias.add(ocorrencia);
@@ -88,7 +90,7 @@ public class OcorrenciaDB {
                                             resultSet.getString("local"),
                                             resultSet.getString("descricao"),
                                             resultSet.getString("status"),
-                                            resultSet.getString("data"),
+                                            resultSet.getDate("data"),
                                             resultSet.getString("idcondomino"));
             }
             UsuarioBD usuarioBD = new UsuarioBD(this.statement);
@@ -102,7 +104,7 @@ public class OcorrenciaDB {
     
     public Ocorrencia setOcorrencia(String idocorrencia, 
                                     String local, String descricao, 
-                                    String status, String data, String idcondomino){
+                                    String status, Date data, String idcondomino){
         
         Ocorrencia ocorrencia = new Ocorrencia();
         Condomino condomino = new Condomino();

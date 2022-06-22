@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import models.Condomino;
 import models.Ocorrencia;
 import models.repository.OcorrenciaDB;
-import models.repository.QAcessDB;
+import models.repository.UsuarioBD;
 import views.ViewOcorrencia;
 
 /**
@@ -22,10 +22,12 @@ public class OcorrenciaController implements ActionListener{
     private ViewOcorrencia viewOcorrencia;
     private Statement statement;
     private OcorrenciaDB ocorrenciaDB;
+    private UsuarioBD condomino;
     
     public OcorrenciaController(Statement statement, ViewOcorrencia viewOcorrencia){
         this.statement = statement;
         this.ocorrenciaDB = new OcorrenciaDB(statement);
+        this.condomino = new UsuarioBD(statement);
         this.viewOcorrencia = viewOcorrencia;
         this.viewOcorrencia.botaoEnviar.addActionListener(this);
     }

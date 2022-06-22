@@ -24,8 +24,8 @@ public class CorrespondenciaDB {
                     + "'" + correspondencia.getRemetente() + "', "
                     + "'" + correspondencia.getUnidade().getId() + "', "
                     + "'" + correspondencia.getStatus() + "', "
-                    + "'" + correspondencia.getFuncionárioResponsavelPelaRecepcao().getId() + "', "
-                    + "'" + correspondencia.getDataRecepcionadaPeloCondominio() + "');";
+                    + "'" + correspondencia.getFuncionarioRecebimento().getId() + "', "
+                    + "'" + correspondencia.getDataRecebimento() + "');";
             
             statement.execute(sql);
             return true;

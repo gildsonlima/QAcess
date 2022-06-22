@@ -26,10 +26,11 @@ public class QAcessDB {
         return statement;
     }
     
+    @SuppressWarnings("UseSpecificCatch")
     public boolean connect(){
         String server = "jdbc:mysql://localhost:3306/qaccess";
         String user = "root";
-        String pwd = "ubiq2022";
+        String pwd = "123456";
         String driver = "com.mysql.cj.jdbc.Driver";
         
         try{

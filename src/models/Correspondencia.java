@@ -17,11 +17,15 @@ public class Correspondencia {
    private String remetente;
    private Unidade unidade;
    private String status;
-   private Funcionario funcionárioResponsavelPelaRecepcao;
-   private Date dataRecepcionadaPeloCondominio;
-   private Condomino condominoResponsavelPelaRetirada;
-   private Funcionario funcionarioResponsavelPelaEntrega;
-   private Date dataRecepcionadaPeloCondomino;
+   private Funcionario funcionarioRecebimento;  
+   private Date dataRecebimento; 
+   private Condomino condominoRetirada; 
+   private Funcionario funcionarioEntrega; 
+   private Date dataRetirada; 
+   private String tipoEncomenda;
+   private String condigoEncomenda;
+   private String destinatario;
+   
    
     public Correspondencia(){
         this.status = "Pendente";
@@ -58,50 +62,76 @@ public class Correspondencia {
         if(status.equalsIgnoreCase("Entregue")){
             this.status = status;
             Date date = new Date();
-            this.setDataRecepcionadaPeloCondomino(date);
+            this.setDataRetirada(date);
         }else{
             this.status = status;
         }
         return true;
     }
 
-    public Funcionario getFuncionárioResponsavelPelaRecepcao() {
-        return funcionárioResponsavelPelaRecepcao;
+    public Funcionario getFuncionarioRecebimento() {
+        return funcionarioRecebimento;
     }
 
-    public void setFuncionárioResponsavelPelaRecepcao(Funcionario funcionárioResponsavelPelaRecepcao) {
-        this.funcionárioResponsavelPelaRecepcao = funcionárioResponsavelPelaRecepcao;
+    public void setFuncionarioRecebimento(Funcionario funcionarioRecebimento) {
+        this.funcionarioRecebimento = funcionarioRecebimento;
     }
 
-    public Date getDataRecepcionadaPeloCondominio() {
-        return dataRecepcionadaPeloCondominio;
+    public Date getDataRecebimento() {
+        return dataRecebimento;
     }
 
-    public void setDataRecepcionadaPeloCondominio(Date dataRecepcionadaPeloCondominio) {
-        this.dataRecepcionadaPeloCondominio = dataRecepcionadaPeloCondominio;
+    public void setDataRecebimento(Date dataRecebimento) {
+        this.dataRecebimento = dataRecebimento;
     }
 
-    public Condomino getCondominoResponsavelPelaRetirada() {
-        return condominoResponsavelPelaRetirada;
+    public Condomino getCondominoRetirada() {
+        return condominoRetirada;
     }
 
-    public void setCondominoResponsavelPelaRetirada(Condomino condominoResponsavelPelaRetirada) {
-        this.condominoResponsavelPelaRetirada = condominoResponsavelPelaRetirada;
+    public void setCondominoRetirada(Condomino condominoRetirada) {
+        this.condominoRetirada = condominoRetirada;
     }
 
-    public Funcionario getFuncionarioResponsavelPelaEntrega() {
-        return funcionarioResponsavelPelaEntrega;
+    public Funcionario getFuncionarioEntrega() {
+        return funcionarioEntrega;
     }
 
-    public void setFuncionarioResponsavelPelaEntrega(Funcionario funcionarioResponsavelPelaEntrega) {
-        this.funcionarioResponsavelPelaEntrega = funcionarioResponsavelPelaEntrega;
+    public void setFuncionarioEntrega(Funcionario funcionarioEntrega) {
+        this.funcionarioEntrega = funcionarioEntrega;
     }
 
-    public Date getDataRecepcionadaPeloCondomino() {
-        return dataRecepcionadaPeloCondomino;
+    public Date getDataRetirada() {
+        return dataRetirada;
     }
 
-    public void setDataRecepcionadaPeloCondomino(Date dataRecepcionadaPeloCondomino) {
-        this.dataRecepcionadaPeloCondomino = dataRecepcionadaPeloCondomino;
+    public void setDataRetirada(Date dataRetirada) {
+        this.dataRetirada = dataRetirada;
     }
+
+    public String getTipoEncomenda() {
+        return tipoEncomenda;
+    }
+
+    public void setTipoEncomenda(String tipoEncomenda) {
+        this.tipoEncomenda = tipoEncomenda;
+    }
+
+    public String getCondigoEncomenda() {
+        return condigoEncomenda;
+    }
+
+    public void setCondigoEncomenda(String condigoEncomenda) {
+        this.condigoEncomenda = condigoEncomenda;
+    }
+
+    public String getDestinatario() {
+        return destinatario;
+    }
+
+    public void setDestinatario(String destinatario) {
+        this.destinatario = destinatario;
+    }
+    
+    
 }
