@@ -27,13 +27,18 @@ public class OcorrenciaController implements ActionListener{
     private Statement statement;
     private OcorrenciaDB ocorrenciaDB;
     private UsuarioBD condominoDB;
+    private Condomino condomino;
         
     public OcorrenciaController(Statement statement, ViewOcorrencia viewOcorrencia){
         this.statement = statement;
         this.ocorrenciaDB = new OcorrenciaDB(statement);
         this.condominoDB = new UsuarioBD(statement);
         this.viewOcorrencia = viewOcorrencia;
+        
         this.viewOcorrencia.botaoEnviar.addActionListener(this);
+        this.viewOcorrencia.botaoPesquisa.addActionListener(this);
+        this.viewOcorrencia.botaoLimpar.addActionListener(this);
+        
     }
     
     SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
@@ -43,11 +48,12 @@ public class OcorrenciaController implements ActionListener{
         
         if(e.getSource() == this.viewOcorrencia.botaoEnviar){
             
-            Condomino condomino = new Condomino();
+            Condomino condomino = condominoDB.listCondominoNome(this.viewOcorrencia.txtNome.getText()) ;
             
             Ocorrencia ocorrencia = new Ocorrencia();
             ocorrencia.setDescricao(this.viewOcorrencia.txtOcorrencia.getText());
             ocorrencia.setLocal(this.viewOcorrencia.txtLocal.getText());
+            
             ocorrencia.setCondomino(condomino);
             fillTable(this.viewOcorrencia.tableOcorrencia);
             if(this.ocorrenciaDB.insertOcorrencia(ocorrencia)){
@@ -56,12 +62,25 @@ public class OcorrenciaController implements ActionListener{
                System.out.println("Erro ao inserir a Ocorrencia!");
            }
             
+        }else{
+            if(e.getSource() == this.viewOcorrencia.botaoPesquisa){
+                fillTable(this.viewOcorrencia.tableOcorrencia);
+                System.out.println("pesquisando");
+            }else{
+                if(e.getSource() == this.viewOcorrencia.botaoLimpar){
+                    this.viewOcorrencia.txtLocal.setText("");
+                    this.viewOcorrencia.txtNome.setText("");
+                    this.viewOcorrencia.txtOcorrencia.setText("");
+                    
+                }
+            }
         }       
     }
     
     public void fillTable(JTable table){
         //criar essa defaultTable para a gente conseguir manipular os dados que vão estar nela
         DefaultTableModel defaultTable = new DefaultTableModel();
+        
         //apontar nossa tabela que estar na tela para a que a gente está montando localmente
         table.setModel(defaultTable);
         //adicionar as colunas com os nomes que a gente quer que seja exibido
@@ -74,8 +93,9 @@ public class OcorrenciaController implements ActionListener{
         Object [] colunas  = new Object[4];
         ArrayList<Ocorrencia> ocorrencias = this.ocorrenciaDB.listOcorrencias();
         for (Ocorrencia ocorrencia : ocorrencias) {
-            colunas[0] = ocorrencia.getId();
-            colunas[1] = formato.format(ocorrencia.getData());
+            condomino = ocorrencia.getCondomino();
+            colunas[0] = condomino.getNome();
+            colunas[1] = ocorrencia.getData();
             colunas[2] = ocorrencia.getLocal();
             colunas[3] = ocorrencia.getStatus();
             

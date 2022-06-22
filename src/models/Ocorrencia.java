@@ -4,6 +4,7 @@
  */
 package models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
@@ -20,11 +21,13 @@ public class Ocorrencia {
     private String status;
     private String data;
     
+    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+    
     public Ocorrencia(){
         this.status = "Pendente";
         this.id = UUID.randomUUID();
         Date date = new Date();
-        this.data = date.toString();
+        this.data = formato.format(date);
     }
 
     public UUID getId() {
